@@ -34,20 +34,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   String src =
       'https://upload.wikimedia.org/wikipedia/commons/1/13/Wattpad_logo.png';
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                         "Our applications runs on as many platforms as you want, from Android to iOS. Web to Desktop choose what fits you need the most.",
                         style: Theme.of(context).textTheme.titleLarge),
+                    const SizedBox(height:20),    
+                    OutlinedButton(onPressed: (){}, child: const Text("Contact information"))    
                   ],
                 ),
               ),
@@ -106,17 +97,86 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Container(
             height: 500,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset('assets/images/screenshot1.png'),
-                Image.asset('assets/images/screenshot2.png'),
-                Image.asset('assets/images/screenshot3.png'),
-              ],
+            child: Center(
+              child: FittedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/screenshot1.png'),
+                    Image.asset('assets/images/screenshot2.png'),
+                    Image.asset('assets/images/screenshot3.png'),
+                  ],
+                ),
+              ),
             )
           ),
           Container(
             height: 500,
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                Text("Pricing", style: GoogleFonts.fascinate(
+                            textStyle:
+                                Theme.of(context).textTheme.headlineSmall)),
+                const SizedBox(height: 20),                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey.shade200
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          Icon(Icons.house_siding_rounded),
+                          Text("Extra small"),
+                          Text("Price: 300 000 kr"),
+                          Text("Maintenance: 10 000 kr/mnd"),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 50),
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey.shade200
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          Icon(Icons.house_siding_rounded),
+                          Text("Extra small"),
+                          Text("Price: 300 000 kr"),
+                          Text("Maintenance: 10 000 kr/mnd"),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 50),
+                    Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey.shade200
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          Icon(Icons.house_siding_rounded),
+                          Text("Extra small"),
+                          Text("Price: 300 000 kr"),
+                          Text("Maintenance: 10 000 kr/mnd"),
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              ]),
+            ),
           ),
           Container(
             color: Colors.grey.shade900,
