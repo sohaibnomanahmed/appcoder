@@ -43,8 +43,10 @@ class Header extends StatelessWidget {
                   "Our applications runs on as many platforms as you want, from Android to iOS. Web to Desktop choose what fits you need the most.",
                   style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 20),
-              OutlinedButton(
-                  onPressed: () {}, child: const Text("Contact information"))
+              ElevatedButton(onPressed: (){},  style: TextButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor,
+                padding: const EdgeInsets.all(20)
+              ),child: const Text("Let's Talk"),)
             ],
           ),
         ),

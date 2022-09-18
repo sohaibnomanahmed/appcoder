@@ -6,14 +6,31 @@ class PriceCard extends StatelessWidget {
   final String size;
   final String projectPrice;
   final String monthPrice;
+  final int numEnabled;
 
-  const PriceCard({
+  PriceCard({
     Key? key,
     required this.icon,
     required this.size,
     required this.projectPrice,
-    required this.monthPrice,
+    required this.monthPrice, 
+    required this.numEnabled,
   }) : super(key: key);
+
+  final features = [
+    "Basic app functionallity",
+    "Custom design",
+    "Animations",
+    "Layout for mobile and web",
+    "Multiple Pages",
+    "Localization",
+    "Authentication",
+    "Notifications",
+    "Chat",
+    "Embedded Google Maps",
+    "Payments with stripe",
+    "Gaming features"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +54,13 @@ class PriceCard extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Divider(),
           ),
-          const PriceFeature(title: "Runs on either Android and iOS, or Web or Desktop"),
-          const PriceFeature(title: "Authentication"),
-          const PriceFeature(title: "Notifications"),
-          const PriceFeature(title: "Text, Images, Buttons"),
-          const PriceFeature(title: "Location"),
-          const PriceFeature(title: "Animations"),
-          const PriceFeature(title: "Localization"),
+          for (int i = 0; i< features.length; i++)
+            PriceFeature(title: features[i], enabled: i < numEnabled ? true : false),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
+            child: Divider(),
+          ),
+          const Text("* Other cost can come from hosting")
         ],
       ),
     );

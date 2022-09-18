@@ -2,22 +2,17 @@ import 'package:flutter/material.dart';
 
 class PriceFeature extends StatelessWidget {
   final String title;
-  
-  const PriceFeature({Key? key, required this.title}) : super(key: key);
+  final bool enabled;
+
+  const PriceFeature({Key? key, required this.title, required this.enabled}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(
-          Icons.check_circle_rounded,
-          size: 15
-        ),
-        const SizedBox(
-          width: 10
-        ),
-        Flexible(
-            child: Text(title))
+        Icon(Icons.check_circle_rounded, size: 15, color: enabled ? Colors.teal : Colors.grey,),
+        const SizedBox(width: 10),
+        Flexible(child: Text(title))
       ],
     );
   }

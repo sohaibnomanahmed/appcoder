@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'example_preview.dart';
 
@@ -14,17 +15,25 @@ class ExampleContainer extends StatelessWidget {
       child: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: 800),
-          child: FittedBox(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                ExamplePreview(src: 'assets/images/screenshot1.png'),
-                SizedBox(width: 50),
-                ExamplePreview(src: 'assets/images/screenshot2.png'),
-                SizedBox(width: 50),
-                ExamplePreview(src: 'assets/images/screenshot3.png'),
-              ],
-            ),
+          child: Column(
+            children: [
+              Text("Examples",
+                  style: GoogleFonts.fascinate(
+                      textStyle: Theme.of(context).textTheme.headlineSmall)),
+              const SizedBox(height: 20),
+              FittedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    ExamplePreview(src: 'assets/images/screenshot1.png'),
+                    SizedBox(width: 50),
+                    ExamplePreview(src: 'assets/images/screenshot2.png'),
+                    SizedBox(width: 50),
+                    ExamplePreview(src: 'assets/images/screenshot3.png'),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

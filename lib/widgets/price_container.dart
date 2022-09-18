@@ -26,24 +26,27 @@ class PriceContainer extends StatelessWidget {
               FittedBox(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     PriceCard(
                         icon: Icons.house_rounded,
                         size: "S",
-                        projectPrice: "200 000",
+                        numEnabled: 4,
+                        projectPrice: "300 000",
                         monthPrice: "10 000"),
-                    SizedBox(width: 50),
+                    const SizedBox(width: 50),
                     PriceCard(
                       icon: Icons.temple_buddhist_rounded,
                       size: "M",
-                      projectPrice: "500 000",
+                      numEnabled: 8,
+                      projectPrice: "600 000",
                       monthPrice: "30 000",
                     ),
-                    SizedBox(width: 50),
+                    const SizedBox(width: 50),
                     PriceCard(
                         icon: Icons.apartment_rounded,
                         size: "L",
-                        projectPrice: "1 200 000",
+                        numEnabled: 12,
+                        projectPrice: "1 500 000",
                         monthPrice: "50 000")
                   ],
                 ),
