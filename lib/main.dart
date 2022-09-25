@@ -1,11 +1,13 @@
-import 'package:appcoder/widgets/block.dart';
-import 'package:appcoder/widgets/example_container.dart';
-import 'package:appcoder/widgets/footer.dart';
-import 'package:appcoder/widgets/header.dart';
-import 'package:appcoder/widgets/info_container.dart';
-import 'package:appcoder/widgets/price_container.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'home/examples/example_container.dart';
+import 'home/footer.dart';
+import 'home/header.dart';
+import 'home/info/info_container.dart';
+import 'home/pricing/price_container.dart';
+import 'section_container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,9 +22,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Appcoder',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textTheme: GoogleFonts.montserratTextTheme()
-      ),
+          primarySwatch: Colors.blue,
+          textTheme: GoogleFonts.montserratTextTheme()),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -38,19 +39,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final ScrollController _controller = ScrollController();
+
+  void _scrollDown() {
+    _controller.jumpTo(_controller.position.maxScrollExtent);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        controller: _controller,
         child: Column(
-          children:  const [
-            Header(),
-            ExampleContainer(),
-            SizedBox(height: 100),
-            InfoContainer(),
-            PriceContainer(),
-            Footer()
+          children: [
+            Header(scrollDown: _scrollDown),
+            const SectionContainer(child: ExampleContainer()),
+            const SectionContainer(child: InfoContainer()),
+            const SectionContainer(child: PriceContainer()),
+            const Footer()
           ],
         ),
       ),
