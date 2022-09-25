@@ -29,7 +29,7 @@ class DetailSection extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(width: 50),
+        const SizedBox(width: 100),
         if (!frame)
         Image.asset(
           imageUrl,

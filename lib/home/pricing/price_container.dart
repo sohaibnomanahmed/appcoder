@@ -38,7 +38,7 @@ class PriceContainer extends StatelessWidget {
                   icon: Icons.apartment_rounded,
                   size: "L",
                   numEnabled: 12,
-                  projectPrice: "1 500 000",
+                  projectPrice: "1 850 000",
                   monthPrice: "50 000")
             ],
           ),
