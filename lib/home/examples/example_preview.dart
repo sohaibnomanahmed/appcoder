@@ -31,12 +31,14 @@ class ExamplePreview extends StatelessWidget {
           },
           child: Column(
             children: [
+              const SizedBox(height: 10),
               Image.asset(src),
               const SizedBox(height: 20),
               ExampleTitle(
                 title: title,
                 icon: icon,
               ),
+              const SizedBox(height: 20),
             ],
           )),
     );

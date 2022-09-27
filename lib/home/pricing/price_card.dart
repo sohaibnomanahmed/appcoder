@@ -31,6 +31,7 @@ class PriceCard extends StatelessWidget {
     "Embedded Google Maps",
     "Payments with stripe",
     "Gaming features"
+    "Search engine"
   ];
 
   @override

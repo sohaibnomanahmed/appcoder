@@ -23,26 +23,41 @@ class DetailsPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stack(
-              children: [
-                SizedBox(
-                  height: 250,
-                  width: double.infinity,
-                  child: Image.asset((id == 1) ? 'assets/images/app_banner3.jpg' : (id == 2) ? 'assets/images/game_banner.jpg' : 'assets/images/web_banner2.jpg',
-                      fit: BoxFit.cover),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(50.0),
-                  child: Align(
+            // Stack(
+            //   children: [
+            //     SizedBox(
+            //       height: 250,
+            //       width: double.infinity,
+            //       child: Image.asset((id == 1) ? 'assets/images/app_banner3.jpg' : (id == 2) ? 'assets/images/game_banner.jpg' : 'assets/images/web_banner2.jpg',
+            //           fit: BoxFit.cover),
+            //     ),
+            //     Padding(
+            //       padding: const EdgeInsets.all(50.0),
+            //       child: Align(
+            //         alignment: Alignment.bottomLeft,
+            //         child: Image.asset(
+            //           imageUrl,
+            //           height: 300,
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            SectionContainer(
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage((id == 1) ? 'assets/images/app_banner3.jpg' : (id == 2) ? 'assets/images/game_banner.jpg' : 'assets/images/web_banner2.jpg'),
+                      fit: BoxFit.fitWidth),
+              ),
+              child: Container(
+                child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Image.asset(
                       imageUrl,
                       height: 300,
                     ),
                   ),
-                ),
-              ],
-            ),
+              )
+              ),
             if (id == 1)
               const SectionContainer(
                   child: DetailSection(
