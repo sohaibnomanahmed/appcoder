@@ -48,7 +48,7 @@ class Header extends StatelessWidget {
               ElevatedButton(
                 onPressed: scrollDown,
                 style: TextButton.styleFrom(
-                    backgroundColor: Theme.of(context).primaryColor,
+                    backgroundColor: Colors.indigo,
                     padding: const EdgeInsets.all(20)),
                 child: const Text("Let's Talk"),
               )

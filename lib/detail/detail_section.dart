@@ -5,13 +5,16 @@ class DetailSection extends StatelessWidget {
   final String title;
   final String text;
   final bool frame;
+  final bool wide;
 
   const DetailSection(
       {Key? key,
       required this.imageUrl,
       required this.title,
       required this.text,
-      this.frame = false})
+      this.frame = false,
+      this.wide = false,
+      })
       : super(key: key);
 
   @override
@@ -31,10 +34,10 @@ class DetailSection extends StatelessWidget {
         ),
         const SizedBox(width: 100),
         if (!frame)
-        Image.asset(
-          imageUrl,
-          width: 300,
-        ),
+          Image.asset(
+            imageUrl,
+            width: wide ? 400 : 300,
+          ),
         if (frame)
           Card(
             clipBehavior: Clip.hardEdge,
@@ -43,7 +46,7 @@ class DetailSection extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             child: Image.asset(
               imageUrl,
-              width: 300,
+              width: wide ? 400 : 300,
             ),
           )
       ],

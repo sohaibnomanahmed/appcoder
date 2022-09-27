@@ -23,41 +23,41 @@ class DetailsPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Stack(
-            //   children: [
-            //     SizedBox(
-            //       height: 250,
-            //       width: double.infinity,
-            //       child: Image.asset((id == 1) ? 'assets/images/app_banner3.jpg' : (id == 2) ? 'assets/images/game_banner.jpg' : 'assets/images/web_banner2.jpg',
-            //           fit: BoxFit.cover),
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.all(50.0),
-            //       child: Align(
-            //         alignment: Alignment.bottomLeft,
-            //         child: Image.asset(
-            //           imageUrl,
-            //           height: 300,
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            SectionContainer(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage((id == 1) ? 'assets/images/app_banner3.jpg' : (id == 2) ? 'assets/images/game_banner.jpg' : 'assets/images/web_banner2.jpg'),
-                      fit: BoxFit.fitWidth),
-              ),
-              child: Container(
-                child: Align(
+            Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                SizedBox(
+                  height: 250,
+                  width: double.infinity,
+                  child: Image.asset((id == 1) ? 'assets/images/app_banner.jpg' : (id == 2) ? 'assets/images/game_banner.jpg' : 'assets/images/web_banner.jpg',
+                      fit: BoxFit.cover),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(50.0),
+                  constraints: const BoxConstraints(maxWidth: 900),
+                  child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Image.asset(
                       imageUrl,
                       height: 300,
                     ),
                   ),
-              )
-              ),
+                ),
+              ],
+            ),
+            // SectionContainer(
+            //   decoration: BoxDecoration(
+            //     image: DecorationImage(image: AssetImage((id == 1) ? 'assets/images/app_banner3.jpg' : (id == 2) ? 'assets/images/game_banner.jpg' : 'assets/images/web_banner2.jpg'),
+            //           fit: BoxFit.fitWidth),
+            //   ),
+            //   child: Align(
+            //         alignment: Alignment.bottomLeft,
+            //         child: Image.asset(
+            //           imageUrl,
+            //           height: 300,
+            //         ),
+            //       ),
+            //   ),
             if (id == 1)
               const SectionContainer(
                   child: DetailSection(
@@ -104,21 +104,21 @@ class DetailsPage extends StatelessWidget {
                       imageUrl: 'assets/images/example_3_details/example_3.png',
                       title: "Responsive Layout",
                       text:
-                          "A game engine provides options for creating animations. Colision can be detected when two object enters the same position, in this example when the bird collide with a candy it creates a particle animations.")),
+                          "A game engine provides options for creating animations. Colision can be detected when two object enters the same position, in this example when the bird collide with a candy it creates a particle animations.", wide: true,)),
             if (id == 3)
               const SectionContainer(
                   child: DetailSection(
-                      imageUrl: 'assets/images/example_3_details/22.png',
+                      imageUrl: 'assets/images/example_3_details/button.png',
                       title: "Third party authentication",
                       text:
-                          "A game engine provides options for creating animations. Colision can be detected when two object enters the same position, in this example when the bird collide with a candy it creates a particle animations.")),
+                          "A game engine provides options for creating animations. Colision can be detected when two object enters the same position, in this example when the bird collide with a candy it creates a particle animations.", wide: true,)),
             if (id == 3)
               const SectionContainer(
                   child: DetailSection(
-                      imageUrl: 'assets/images/example_3_details/profile3.png',
+                      imageUrl: 'assets/images/example_3_details/profile2.png',
                       title: "Profile",
                       text:
-                          "A game engine provides options for creating animations. Colision can be detected when two object enters the same position, in this example when the bird collide with a candy it creates a particle animations.")),
+                          "A game engine provides options for creating animations. Colision can be detected when two object enters the same position, in this example when the bird collide with a candy it creates a particle animations.", wide: true,)),
           ],
         ),
       ),

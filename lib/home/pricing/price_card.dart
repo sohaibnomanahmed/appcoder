@@ -30,7 +30,7 @@ class PriceCard extends StatelessWidget {
     "Chat",
     "Embedded Google Maps",
     "Payments with stripe",
-    "Gaming features"
+    "Gaming features",
     "Search engine"
   ];
 

@@ -11,7 +11,7 @@ class PriceContainer extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text("Pricing",
+        Text("Pricing plans",
             style: GoogleFonts.fascinate(
                 textStyle: Theme.of(context).textTheme.headlineSmall)),
         const SizedBox(height: 20),
