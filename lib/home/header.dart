@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 
 class Header extends StatelessWidget {
   final void Function() scrollDown;
@@ -48,7 +47,7 @@ class Header extends StatelessWidget {
               ElevatedButton(
                 onPressed: scrollDown,
                 style: TextButton.styleFrom(
-                    backgroundColor: Colors.indigo,
+                    backgroundColor: Theme.of(context).primaryColor,
                     padding: const EdgeInsets.all(20)),
                 child: const Text("Let's Talk"),
               )
