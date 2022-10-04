@@ -1,3 +1,4 @@
+import 'package:appcoder/responsive/responsive_layout.dart';
 import 'package:flutter/material.dart';
 
 import 'example_preview.dart';
@@ -7,7 +8,26 @@ class ExampleContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ResponsiveLayout(mobileLayout: Column(
+      children: const [
+        ExamplePreview(
+                  id: 1,
+                  title: "App Development",
+                  icon: Icon(Icons.phone_iphone_rounded),
+                  src: 'assets/images/example_1_details/screenshot2.png'),
+        ExamplePreview(
+                  id: 2,
+                  title: "Game Development",
+                  icon: Icon(Icons.gamepad_rounded),
+                  src: 'assets/images/example_4.png'),  
+         ExamplePreview(
+                id: 3,
+                title: "Web Devlopment",
+                icon: Icon(Icons.web_rounded),
+                src: 'assets/images/example_6.png',
+              ),                 
+      ],
+    ), desktopLayout: Column(
       children: [
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,6 +57,6 @@ class ExampleContainer extends StatelessWidget {
           ],
         ),
       ],
-    );
+    ));
   }
 }

@@ -32,7 +32,7 @@ class ExamplePreview extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 10),
-              Image.asset(src),
+              Image.asset(src, width: 400),
               const SizedBox(height: 20),
               ExampleTitle(
                 title: title,

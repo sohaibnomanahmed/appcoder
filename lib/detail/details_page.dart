@@ -59,7 +59,7 @@ class DetailsPage extends StatelessWidget {
             //       ),
             //   ),
             if (id == 1)
-              const SectionContainer(
+              SectionContainer(
                   child: DetailSection(
                       imageUrl:
                           'assets/images/example_1_details/screenshot1.png',
@@ -67,14 +67,14 @@ class DetailsPage extends StatelessWidget {
                       text:
                           "Chat functionallity, makes it easier for people inside the applications to cominicate with each other. Each application can its own costumized chat feature, able to send messages, images, gifs, location and other necessary features.")),
             if (id == 1)
-              const SectionContainer(
+              SectionContainer(
                   child: DetailSection(
                       imageUrl: 'assets/images/example_1_details/filter.png',
                       title: "Filtering",
                       text:
                           "You own profile showing the item other people need to know about the users in the application. Upload a profile picture and change the information inside your profile to share information about your self with others")),
             if (id == 1)
-              const SectionContainer(
+              SectionContainer(
                   child: DetailSection(
                 imageUrl: 'assets/images/example_1_details/search.gif',
                 title: "Search",
@@ -83,7 +83,7 @@ class DetailsPage extends StatelessWidget {
                 frame: true,
               )),
             if (id == 2)
-              const SectionContainer(
+              SectionContainer(
                   child: DetailSection(
                 imageUrl: 'assets/images/example_2_details/demo.gif',
                 title: "Animations",
@@ -92,28 +92,28 @@ class DetailsPage extends StatelessWidget {
                 frame: true,
               )),
             if (id == 2)
-              const SectionContainer(
+              SectionContainer(
                   child: DetailSection(
                       imageUrl: 'assets/images/example_2_details/example_2.png',
                       title: "Responsive Layout",
                       text:
                           "The layout can be responsive like for this game. It fits for desktop and web apps as well as mobile screens.")),
             if (id == 3)
-              const SectionContainer(
+              SectionContainer(
                   child: DetailSection(
                       imageUrl: 'assets/images/example_3_details/example_3.png',
                       title: "Responsive Layout",
                       text:
                           "A game engine provides options for creating animations. Colision can be detected when two object enters the same position, in this example when the bird collide with a candy it creates a particle animations.", wide: true,)),
             if (id == 3)
-              const SectionContainer(
+              SectionContainer(
                   child: DetailSection(
                       imageUrl: 'assets/images/example_3_details/button.png',
                       title: "Third party authentication",
                       text:
                           "A game engine provides options for creating animations. Colision can be detected when two object enters the same position, in this example when the bird collide with a candy it creates a particle animations.", wide: true,)),
             if (id == 3)
-              const SectionContainer(
+              SectionContainer(
                   child: DetailSection(
                       imageUrl: 'assets/images/example_3_details/profile2.png',
                       title: "Profile",

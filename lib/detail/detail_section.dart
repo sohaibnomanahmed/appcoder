@@ -1,3 +1,4 @@
+import 'package:appcoder/responsive/responsive_layout.dart';
 import 'package:flutter/material.dart';
 
 class DetailSection extends StatelessWidget {
@@ -7,7 +8,7 @@ class DetailSection extends StatelessWidget {
   final bool frame;
   final bool wide;
 
-  const DetailSection(
+  DetailSection(
       {Key? key,
       required this.imageUrl,
       required this.title,
@@ -17,10 +18,7 @@ class DetailSection extends StatelessWidget {
       })
       : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
+  List<Widget> contentBuilder(BuildContext context) => [
         Flexible(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +30,7 @@ class DetailSection extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(width: 100),
+        const SizedBox(width: 100, height: 100),
         if (!frame)
           Image.asset(
             imageUrl,
@@ -49,7 +47,16 @@ class DetailSection extends StatelessWidget {
               width: wide ? 400 : 300,
             ),
           )
-      ],
-    );
+      ];    
+
+  @override
+  Widget build(BuildContext context) {
+    return ResponsiveLayout(mobileLayout: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: contentBuilder(context),
+    )
+    , desktopLayout: Row(
+      children: contentBuilder(context)
+    ));
   }
 }

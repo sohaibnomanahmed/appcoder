@@ -60,8 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Header(scrollDown: _scrollDown),
             const SectionContainer(child: ExampleContainer()),
-            const SectionContainer(child: InfoContainer()),
-            const SectionContainer(child: PriceContainer()),
+            SectionContainer(child: InfoContainer()),
+            SectionContainer(child: PriceContainer()),
             const Footer()
           ],
         ),
