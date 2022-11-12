@@ -27,7 +27,10 @@ class ExamplePreview extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20))),
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (_) => DetailsPage(id: id, imageUrl: src)));
+                builder: (_) => SelectableRegion(
+        selectionControls: materialTextSelectionControls,
+        focusNode: FocusNode(),
+        child:DetailsPage(id: id, imageUrl: src))));
           },
           child: Column(
             children: [

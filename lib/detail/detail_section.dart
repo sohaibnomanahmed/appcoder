@@ -8,15 +8,14 @@ class DetailSection extends StatelessWidget {
   final bool frame;
   final bool wide;
 
-  DetailSection(
-      {Key? key,
-      required this.imageUrl,
-      required this.title,
-      required this.text,
-      this.frame = false,
-      this.wide = false,
-      })
-      : super(key: key);
+  const DetailSection({
+    Key? key,
+    required this.imageUrl,
+    required this.title,
+    required this.text,
+    this.frame = false,
+    this.wide = false,
+  }) : super(key: key);
 
   List<Widget> contentBuilder(BuildContext context) => [
         Flexible(
@@ -24,7 +23,8 @@ class DetailSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(title, style: Theme.of(context).textTheme.titleLarge),
+              Text(title,
+                  style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 20),
               Text(text),
             ],
@@ -47,16 +47,15 @@ class DetailSection extends StatelessWidget {
               width: wide ? 400 : 300,
             ),
           )
-      ];    
+      ];
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveLayout(mobileLayout: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: contentBuilder(context),
-    )
-    , desktopLayout: Row(
-      children: contentBuilder(context)
-    ));
+    return ResponsiveLayout(
+        mobileLayout: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: contentBuilder(context),
+        ),
+        desktopLayout: Row(children: contentBuilder(context)));
   }
 }

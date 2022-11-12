@@ -14,7 +14,7 @@ class PriceCard extends StatelessWidget {
     required this.icon,
     required this.size,
     required this.projectPrice,
-    required this.monthPrice, 
+    required this.monthPrice,
     required this.numEnabled,
   }) : super(key: key);
 
@@ -56,8 +56,9 @@ class PriceCard extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Divider(),
           ),
-          for (int i = 0; i< features.length; i++)
-            PriceFeature(title: features[i], enabled: i < numEnabled ? true : false),
+          for (int i = 0; i < features.length; i++)
+            PriceFeature(
+                title: features[i], enabled: i < numEnabled ? true : false),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Divider(),

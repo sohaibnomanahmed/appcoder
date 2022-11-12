@@ -24,15 +24,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blue,
           textTheme: GoogleFonts.montserratTextTheme()),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SelectableRegion(
+        selectionControls: materialTextSelectionControls,
+        focusNode: FocusNode(),
+        child: const MyHomePage()),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
-  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();

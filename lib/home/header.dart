@@ -38,7 +38,10 @@ class Header extends StatelessWidget {
               ),
               Text("We Create Beautiful Applications",
                   style: GoogleFonts.fascinate(
-                      textStyle: Theme.of(context).textTheme.headlineLarge?.copyWith(color: Colors.grey.shade800))),
+                      textStyle: Theme.of(context)
+                          .textTheme
+                          .headlineLarge
+                          ?.copyWith(color: Colors.grey.shade800))),
               const SizedBox(height: 5),
               Text(
                   "Our applications runs on as many platforms as you want, from Android to iOS. Web to Desktop choose what fits you need the most.",
