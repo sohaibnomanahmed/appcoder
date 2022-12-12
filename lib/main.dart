@@ -7,6 +7,7 @@ import 'home/footer.dart';
 import 'home/header.dart';
 import 'home/info/info_container.dart';
 import 'home/pricing/price_container.dart';
+import 'home/stack_container.dart';
 import 'section_container.dart';
 
 void main() {
@@ -63,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Header(scrollDown: _scrollDown),
             const SectionContainer(child: ExampleContainer()),
             SectionContainer(child: InfoContainer()),
+            const SectionContainer(child: StackContainer()),
             SectionContainer(child: PriceContainer()),
             const Footer()
           ],

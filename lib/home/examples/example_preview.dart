@@ -35,7 +35,7 @@ class ExamplePreview extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 10),
-              Image.asset(src, width: 400),
+              Image.asset(src, width: 300),
               const SizedBox(height: 20),
               ExampleTitle(
                 title: title,
